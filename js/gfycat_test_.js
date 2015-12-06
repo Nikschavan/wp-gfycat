@@ -152,6 +152,9 @@ var gfyObject = function (gfyElem) {
     function createVidTag() {
         vid = document.createElement('video');
         vid.className = 'gfyVid';
+        var protomatch = /^(https?):/;
+        gfyWebmUrl = gfyWebmUrl.replace(protomatch, '');
+        gfyMp4Url = gfyMp4Url.replace(protomatch, '');
         if (optAutoplay)
             vid.autoplay = true;
         vid.loop = true;
